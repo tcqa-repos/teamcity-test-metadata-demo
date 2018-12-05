@@ -30,6 +30,13 @@ test {
     useTestNG()
 }
 
+tast testDups (type: Test) {
+    useTestNG() {
+        suiteName = 'Test'
+        include '**Test.*'
+    }
+}
+
 dependencies {
     compile "org.jetbrains.kotlin:kotlin-stdlib-jdk8"
     testCompile group: 'org.testng', name: 'testng', version: '6.14.3'
