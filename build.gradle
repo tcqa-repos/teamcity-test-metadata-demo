@@ -30,7 +30,7 @@ test {
     useTestNG()
 }
 
-tast testDups (type: Test) {
+task testDups (type: Test) {
     useTestNG() {
         suiteName = 'Test'
         include '**Test.*'
