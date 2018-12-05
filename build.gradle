@@ -33,7 +33,7 @@ test {
 task testDups (type: Test) {
     useTestNG() {
         suiteName = 'Test'
-        include '**Test.*'
+        include '**/CodeTest.*'
     }
 }
 
