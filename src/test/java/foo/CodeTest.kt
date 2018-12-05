@@ -14,15 +14,15 @@ class CodeTest {
     fun test_ok() {
 
         // Simple text metadata:
-        println("##teamcity[testMetadata key='some key' value='some value']")
+        println("##teamcity[testMetadata value='some value']")
 
         // Numeric metadata
-        println("##teamcity[testMetadata key='a numeric value' type='number' value='${Code().value()}']")
+        println("##teamcity[testMetadata type='number' value='${Code().value()}']")
 
         // Reference to an artifact
         // gradle_test_report.zip should be created by specifying corresponding artifact path in TC
         val testsPath = "gradle_test_report.zip!/classes/${javaClass.name}.html"
-        println("##teamcity[testMetadata key='Gradle test report' type='artifact' value='$testsPath']")
+        println("##teamcity[testMetadata type='artifact' value='$testsPath']")
 
         publishScreenshot()
     }
@@ -39,7 +39,7 @@ class CodeTest {
         // Looks like does not work, https://youtrack.jetbrains.com/issue/TW-58243
         //println("##teamcity[publishArtifacts 'pictureForAttention.png']")
 
-        println("##teamcity[testMetadata type='image' name='Some screenshot' value='pictureForAttention.png']")
+        println("##teamcity[testMetadata type='image' value='pictureForAttention.png']")
 
     }
 
