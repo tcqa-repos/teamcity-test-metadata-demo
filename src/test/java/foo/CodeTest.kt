@@ -37,7 +37,7 @@ class CodeTest {
     private fun publishScreenshot() {
 
         // Looks like does not work, https://youtrack.jetbrains.com/issue/TW-58243
-        println("##teamcity[publishArtifacts 'new folder/pictureForAttention.png => screenshots.zip']")
+        println("##teamcity[publishArtifacts path='new folder/pictureForAttention.png => screenshots.zip']")
 
         println("##teamcity[testMetadata type='image' value='screenshots.zip!pictureForAttention.png']")
 
