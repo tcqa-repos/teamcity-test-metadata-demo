@@ -1,6 +1,7 @@
 package foo
 
 import foo.bar.Code
+import java.io.File
 import org.testng.annotations.Test
 
 /**
