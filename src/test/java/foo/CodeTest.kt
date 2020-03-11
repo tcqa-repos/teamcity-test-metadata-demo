@@ -1,13 +1,14 @@
 package foo
 
 import foo.bar.Code
+import org.testng.annotations.Listeners
 import org.testng.annotations.Test
 
 /**
  * @author kir
  */
 
-
+@Listeners(TestListener::class)
 class CodeTest {
 
     @Test
@@ -23,8 +24,6 @@ class CodeTest {
         // gradle_test_report.zip should be created by specifying corresponding artifact path in TC
         val testsPath = "gradle_test_report.zip!/classes/${javaClass.name}.html"
         println("##teamcity[testMetadata type='artifact' value='$testsPath']")
-
-        publishScreenshot()
     }
 
     @Test
@@ -32,15 +31,6 @@ class CodeTest {
         test_ok();
 
         throw Exception("And here comes some problem");
-    }
-
-    private fun publishScreenshot() {
-
-        // Looks like does not work, https://youtrack.jetbrains.com/issue/TW-58243
-        println("##teamcity[publishArtifacts 'new folder/pictureForAttention.png => screenshots.zip']")
-
-        println("##teamcity[testMetadata type='image' value='screenshots.zip!pictureForAttention.png']")
-
     }
 
 }
