@@ -14,7 +14,7 @@ class TestListener: IInvokedMethodListener {
     }
 
     private fun publishScreenshot() {
-        println("##teamcity[publishArtifacts 'new folder/pictureForAttention.png => screenshots.zip']")
+        println("##teamcity[publishArtifacts 'new folder/pictureForAttention.png => screenshots.zip/']")
         println("##teamcity[testMetadata type='image' value='screenshots.zip!pictureForAttention.png']")
     }
 }
