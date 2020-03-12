@@ -30,7 +30,7 @@ class CodeTest {
     fun test_failure() {
         test_ok();
         
-        println("##teamcity[publishArtifacts 'new folder/change.png => screenshots.zip/']")
+        println("##teamcity[publishArtifacts 'screenshots/change.png => screenshots.zip/']")
         println("##teamcity[testMetadata type='image' value='screenshots.zip!change.png']")
 
         throw Exception("And here comes some problem");
