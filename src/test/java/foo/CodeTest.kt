@@ -33,7 +33,7 @@ class CodeTest {
         println("##teamcity[publishArtifacts 'screenshots/change.png => screenshots.zip/']")
         println("##teamcity[testMetadata type='image' value='screenshots.zip!change.png']")
 
-        throw Exception("And here comes some problem")
+        throw Exception("And here comes some problem");
     }
 
 }
